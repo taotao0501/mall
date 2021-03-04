@@ -1,0 +1,154 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CharDemo",
+            "request": "launch",
+            "mainClass": "Project1_基本类型使用.CharDemo",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArraySearch",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.ArraySearch",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - bubble_order",
+            "request": "launch",
+            "mainClass": "Project4_array使用.bubble_order",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Array_declare",
+            "request": "launch",
+            "mainClass": "Project4_array使用.Array_declare",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Hello<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project1_基本类型使用.Hello",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Use_variable<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project1_基本类型使用.Use_variable",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-data_type_auto_convert<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project1_基本类型使用.data_type_auto_convert",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-data_type_convert<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project1_基本类型使用.data_type_convert",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MethodDefine<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.MethodDefine",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-方法和方法的调用<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.方法和方法的调用",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-方法有无参数值<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.方法有无参数值",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-方法有无返回值<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.方法有无返回值",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-比较两个数据类型是否相等<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project2_AddFile.比较两个数据类型是否相等",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Do_while<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.Do_while",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Do_while使用<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.Do_while使用",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-break和continue<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.break和continue",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-debug<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.debug",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ifelse使用<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.ifelse使用",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-switch使用<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.switch使用",
+            "projectName": "demo_81ed9832"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-traverse<demo_81ed9832>",
+            "request": "launch",
+            "mainClass": "Project3_循环条件语句使用.traverse",
+            "projectName": "demo_81ed9832"
+        }
+    ]
+}

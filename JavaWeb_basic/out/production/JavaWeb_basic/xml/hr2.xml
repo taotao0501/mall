@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hr SYSTEM "E:\JavaProject\JavaWeb_basic\src\xml\sbt.dtd"><hr>
+    <employee no="3301">
+        <name>张三</name>
+        <age>31</age>
+        <salary>4000</salary>
+        <department>
+            <dname>会计部</dname>
+            <address>xx大厦-B101</address>
+        </department>
+    </employee>
+
+    <employee no="3302">
+        <name>李四</name>
+        <age>32</age>
+        <salary>5000</salary>
+        <department>
+            <dname>工程部</dname>
+            <address>xx大厦-B102</address>
+        </department>
+    </employee>
+
+    <employee no="3303">
+        <name>李铁柱</name>
+        <age>33</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B103</address>
+        </department>
+    </employee>
+
+    <employee no="3304">
+        <name>王四</name>
+        <age>34</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+    <employee no="3304">
+        <name>王五</name>
+        <age>35</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+    <employee no="3304">
+        <name>王六</name>
+        <age>36</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+
+    <employee no="3304">
+        <name>王七</name>
+        <age>37</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+
+    <employee no="3308">
+        <name>王爸</name>
+        <age>38</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+
+    <employee no="3309">
+        <name>王九</name>
+        <age>39</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+
+    <employee no="3310">
+        <name>王十</name>
+        <age>40</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B104</address>
+        </department>
+    </employee>
+</hr>

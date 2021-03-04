@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/mgallery_war_exploded/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/mgallery_war_exploded/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/mgallery_war_exploded/WEB-INF/lib/dom4j-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/mgallery_war_exploded/WEB-INF/lib/jaxen-1.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

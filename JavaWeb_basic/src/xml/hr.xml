@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hr SYSTEM "E:\JavaProject\JavaWeb_basic\src\xml\sbt.dtd"><hr>
+    <employee no="3309">
+        <name>张三</name>
+        <age>31</age>
+        <salary>4000</salary>
+        <department>
+            <dname>会计部</dname>
+            <address>xx大厦-B103</address>
+        </department>
+    </employee>
+
+    <employee no="3310">
+        <name>李四</name>
+        <age>32</age>
+        <salary>5000</salary>
+        <department>
+            <dname>工程部</dname>
+            <address>xx大厦-B104</address>
+        </department>
+    </employee>
+    <employee no="3313">
+        <name>李铁柱</name>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B105</address>
+        </department>
+    </employee>
+    <employee no="3313">
+
+        <name>李铁柱</name>
+        <age>37</age>
+        <salary>3600</salary>
+        <department>
+            <dname>人事部</dname>
+            <address>xx-大厦-B105</address>
+        </department>
+    </employee>
+</hr>

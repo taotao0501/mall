@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.configuration.maven.userSettings": "E:\\maven3.5.4\\conf\\setting.xml"
+}
