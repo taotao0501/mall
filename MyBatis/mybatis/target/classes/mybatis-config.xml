@@ -7,6 +7,15 @@
         <!-- goods_id ==> goodsId 驼峰命名转换 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+
+<!--    pageHelper分页插件配置-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+    
     <!--设置默认指向的数据库-->
     <environments default="dev">
         <!--配置环境，不同的环境不同的id名字 dev是开发环境, prd是生产环境-->
@@ -14,19 +23,22 @@
         <environment id="dev">
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
             <transactionManager type="JDBC"></transactionManager>
-            <!--采用连接池方式管理数据库连接-->
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:5001/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="root"/>
+            <!--采用C3p0连接池方式管理数据库连接-->
+            <dataSource type="com.imooc.mybatis.datasource.C3P0DataSourceFactory">
+                <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+                <property name="jdbcUrl" value="jdbc:mysql://localhost:5001/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="user" value="root"/>
                 <property name="password" value="sbt123"/>
+                <property name="initialPoolSize" value="5"/>
+                <property name="maxPoolSize" value="20"/>
+                <property name="minPoolSize" value="5"/>
             </dataSource>
         </environment>
 
         <environment id="prd">
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
             <transactionManager type="JDBC"></transactionManager>
-            <!--采用连接池方式管理数据库连接-->
+            <!--采用默认连接池方式管理数据库连接-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:5001/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
@@ -35,10 +47,24 @@
             </dataSource>
         </environment>
 
+<!--        需要批量改写imooc-reader中的图片地址-->
+        <environment id="imooc_reader">
+            <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--采用默认连接池方式管理数据库连接-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:5001/imooc_reader?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="sbt123"/>
+            </dataSource>
+        </environment>
 
     </environments>
 
     <mappers>
+<!--        声明-->
         <mapper resource="mappers/goods.xml" />
+        <mapper resource="mappers/goods_detail.xml"/>
     </mappers>
 </configuration>

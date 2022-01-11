@@ -22,6 +22,7 @@ public class GoodsDTO {
     }
 
     public Category getCategory() {
+
         return category;
     }
 

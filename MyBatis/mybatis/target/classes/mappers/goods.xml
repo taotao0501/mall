@@ -2,8 +2,20 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间就是包，隔离不同xml下的相同select id-->
 <mapper namespace="goods">
-    <select id="selectAll" resultType="com.imooc.mybatis.entity.Goods">
+    <!--开启了二级缓存
+        eviction是缓存的清除策略,当缓存对象数量达到上限后,自动触发对应算法对缓存对象清除
+            1.LRU – 最近最久未使用:移除最长时间不被使用的对象。
+            O1 O2 O3 O4 .. O512
+            14 99 83 1     893
+            2.FIFO – 先进先出:按对象进入缓存的顺序来移除它们。
+            3.SOFT – 软引用:移除基于垃圾收集器状态和软引用规则的对象。
+            4.WEAK – 弱引用:更积极的移除基于垃圾收集器状态和弱引用规则的对象。
+    -->
+    <cache eviction="LRU" flushInterval="600000" size="512" readOnly="true"/>
+
+    <select id="selectAll" resultType="com.imooc.mybatis.entity.Goods" useCache="false">
         select * from t_goods order by goods_id desc limit 10
     </select>
 
@@ -29,7 +41,7 @@
      -->
     <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
         select g.*, c.category_name, "1" as test from t_goods g,t_category c
-        where g.category_id=c.category_id
+        where g.category_id=c.category_id limit 10
     </select>
 
     <!--结果映射规则-->
@@ -58,11 +70,12 @@
         where g.category_id=c.category_id
     </select>
 
+    <!--flushCache="true"在sql执行后强制清空缓存-->
     <insert id="insert" parameterType="com.imooc.mybatis.entity.Goods"
             useGeneratedKeys="true" keyProperty="goodsId" keyColumn="goods_id" flushCache="true">
         INSERT INTO t_goods(title, sub_title,original_cost, current_price, discount, is_free_delivery, category_id)
         VALUES (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
---         获取新增的数据的good_id
+-- 获取新增的数据的good_id
 <!--        <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">-->
 <!--            select last_insert_id()-->
 <!--        </selectKey>-->
@@ -87,4 +100,64 @@
     <delete id="delete" parameterType="Integer">
         delete from t_goods where goods_id = #{value}
     </delete>
+<!--动态SQL-->
+    <select id="dynamicSQL" parameterType="java.util.Map" resultType="com.imooc.mybatis.entity.Goods">
+        select * from t_goods
+        <where>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="currentPrice != null">
+                and current_price &lt; #{currentPrice}
+            </if>
+        </where>
+    </select>
+
+<!--预防SQL注入攻击-->
+    <select id="selectByTitle" parameterType="java.util.Map" resultType="com.imooc.mybatis.entity.Goods">
+        select * from t_goods where title = #{title}
+        ${order}
+    </select>
+
+<!--OneToMany-->
+    <resultMap id="rmGoods1" type="com.imooc.mybatis.entity.Goods">
+        <id property="goodsId" column="goods_id"></id>
+        <collection property="goodsDetails" select="goodsDetail.selectByGoodsId"
+                    column="goods_id" />
+    </resultMap>
+    <select id="selectOneToMany" resultMap="rmGoods1">
+        select * from t_goods limit 0,4
+    </select>
+
+    <select id="selectPage" resultType="com.imooc.mybatis.entity.Goods">
+        select * from t_goods where current_price &lt; 1000
+    </select>
+
+<!--    MyBatis批处理-插入-->
+<!--    INSERT INTO table VALUES ("a","a1","a2"),("b","b1","b2"),(.),().-->
+<!--    <insert id="batchInsert" parameterType="jav.util.List">-->
+<!--        INSERT INTO t_goods(title,sub_title,original_cost,current_price,discount,is_free_delivery,category_id)-->
+<!--        VALUES-->
+<!--        <foreach collection="list" item="item" index="index" separator=",">-->
+<!--            (#{item.title},#{item.subTitle}, #{item.originalCost}, #{item.currentPrice}, #{item.discount}, #{item.isFreeDelivery}, #{item.categoryId})-->
+<!--        </foreach>-->
+<!--    </insert>-->
+<!--上面和下面完全一致，但是就是会出现问题，不知道有什么问题，烦-->
+    <insert id="batchInsert" parameterType="java.util.List">
+        INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.title},#{item.subTitle}, #{item.originalCost}, #{item.currentPrice}, #{item.discount}, #{item.isFreeDelivery}, #{item.categoryId})
+        </foreach>
+    </insert>
+
+<!--    批量删除-->
+    <delete id="batchDelete" parameterType="java.util.List">
+        DELETE FROM t_goods WHERE goods_id IN
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+
 </mapper>
